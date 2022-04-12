@@ -51,7 +51,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 		video.muted = true; 
 		// TRUE indicates the sound should be turned offfor the video
 		document.querySelector("#mute").innerHTML = "Unmute";
-		// console.log("Video is now muted");
+		console.log("Video is now muted");
 	}
 	else {
 		video.muted = false;
@@ -60,11 +60,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 // volume slider
-document.getElementById('slider').addEventListener('change', function(){
+document.querySelector('#slider').addEventListener('change', function(){
 	video.volume = this.value / 100;
 	volume = video.volume * 100;
 	document.getElementById("volume").innerHTML = volume + "%";
-	console.log(video.volume);
+	console.log("Volume is ");
 });
 
 // add old school

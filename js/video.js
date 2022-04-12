@@ -43,3 +43,36 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 	console.log("Video current time is", video.currentTime)
 });
+
+// mute and unmute
+document.querySelector("#mute").addEventListener("click", function() {
+	if (video.muted == false) {
+		// FALSE indicates audio should be turned on, default
+		video.muted = true; 
+		// TRUE indicates the sound should be turned offfor the video
+		document.querySelector("#mute").innerHTML = "Unmute";
+		// console.log("Video is now muted");
+	}
+	else {
+		video.muted = false;
+		document.getElementById("mute").innerHTML = "Mute";
+	}
+});
+
+// volume slider
+document.getElementById('slider').addEventListener('change', function(){
+	video.volume = this.value / 100;
+	volume = video.volume * 100;
+	document.getElementById("volume").innerHTML = volume + "%";
+	console.log(video.volume);
+});
+
+// add old school
+document.getElementById('vintage').addEventListener('click', function(){
+	video.classList.add("oldSchool")
+});
+
+//remove old school
+document.getElementById('orig').addEventListener('click', function(){
+	video.classList.remove('oldSchool')
+});
